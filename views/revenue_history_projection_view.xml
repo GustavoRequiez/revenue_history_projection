@@ -16,6 +16,22 @@
     </field>
   </record>
 
+  <!---->
+  <record id="view_revenue_history_projection_line_tree" model="ir.ui.view">
+    <field name="name">view.revenue.history.projection.line.tree</field>
+    <field name="model">revenue.history.projection.line</field>
+    <field name="type">tree</field>
+    <field name="arch" type="xml">
+      <tree string="Revenue History Projection">
+        <field name="partner_name"/>
+        <field name="invoice_number"/>
+        <field name="residual"/>
+        <field name="date_due"/>
+      </tree>
+    </field>
+  </record>
+  <!---->
+
   <record id="view_revenue_history_projection_pivot" model="ir.ui.view">
     <field name="name">view.revenue.history.projection.pivot</field>
     <field name="model">revenue.history.projection.line</field>
