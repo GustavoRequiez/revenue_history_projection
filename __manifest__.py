@@ -11,7 +11,7 @@
     'author': "gflores",
     'website': "https://www.gruporequiez.com",
     'category': 'Account',
-    'version': '12.0.0.0.1',
+    'version': '11.0.0.0.1',
     'license': "LGPL-3",
     'depends': [
         'account',
