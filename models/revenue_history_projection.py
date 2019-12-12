@@ -11,6 +11,7 @@ _logger = logging.getLogger(__name__)
 
 class RevenueHistoryProjection(models.TransientModel):
     _name = 'revenue.history.projection'
+    _description = 'Revenue history projection'
 
     projection_line_ids = fields.One2many(
         'revenue.history.projection.line', 'Projection_id', 'Details', store=True)
@@ -85,6 +86,7 @@ class RevenueHistoryProjection(models.TransientModel):
 
 class RevenueHistoryProjectionLine(models.TransientModel):
     _name = 'revenue.history.projection.line'
+    _description = 'Revenue history projection Lines'
 
     Projection_id = fields.Many2one(
         'revenue.history.projection', 'Projection')
