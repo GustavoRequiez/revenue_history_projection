@@ -15,6 +15,7 @@
     'license': "LGPL-3",
     'depends': [
         'account',
+        'account_accountant',
     ],
     'data': [
         # data
