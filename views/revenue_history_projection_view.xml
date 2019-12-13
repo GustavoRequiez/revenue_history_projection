@@ -52,6 +52,5 @@
     <field name="target">new</field>
   </record>
 
-  <menuitem id="menu_revenue_history_projection" name="Revenue History Porjection" sequence="20" parent="account_reports.account_reports_partners_reports_menu" action="revenue_history_projection_action"/>
-  <!--parent="account.account_reports_management_menu"-->
+  <menuitem id="menu_revenue_history_projection" name="Revenue History Porjection" sequence="30" parent="account_reports.account_reports_partners_reports_menu" action="revenue_history_projection_action"/>
 </odoo>
