@@ -9,15 +9,12 @@
         <group>
           <group>
             <button name="get_revenue_history_projection" string="Get" type="object" class="oe_highlight"/>
-            <button name="get_invoice_from_a_payment" string="Payment" type="object" class="oe_highlight"/>
           </group>
         </group>
-        <!-- <field name="projection_line_ids"> <tree> <field name="date_range"/> <field name="partner_name"/> <field name="invoice_number"/> <field name="residual"/> <field name="date_due"/> </tree> </field> -->
       </form>
     </field>
   </record>
 
-  <!---->
   <record id="view_revenue_history_projection_line_tree" model="ir.ui.view">
     <field name="name">view.revenue.history.projection.line.tree</field>
     <field name="model">revenue.history.projection.line</field>
@@ -31,7 +28,6 @@
       </tree>
     </field>
   </record>
-  <!---->
 
   <record id="view_revenue_history_projection_pivot" model="ir.ui.view">
     <field name="name">view.revenue.history.projection.pivot</field>
@@ -57,5 +53,4 @@
   </record>
 
   <menuitem id="menu_revenue_history_projection" name="Revenue History Porjection" sequence="20" parent="account_reports.account_reports_partners_reports_menu" action="revenue_history_projection_action"/>
-  <!--parent="account.account_reports_management_menu"-->
 </odoo>
