@@ -11,9 +11,15 @@ _logger = logging.getLogger(__name__)
 
 class RevenueHistoryProjection(models.TransientModel):
     _name = 'revenue.history.projection'
+    _description = 'Revenue history projection'
 
     projection_line_ids = fields.One2many(
         'revenue.history.projection.line', 'Projection_id', 'Details', store=True)
+
+    type_report = fields.Selection([
+        ('income', 'Income'),
+        ('expenses', 'Expenses')
+    ], string='Select a report type', default='income')
 
     @api.depends('projection_line_ids')
     def get_revenue_history_projection(self):
@@ -26,22 +32,30 @@ class RevenueHistoryProjection(models.TransientModel):
         total_gral = 0.0
         projection_line_obj = self.env['revenue.history.projection.line']
         projection_line_obj.search([]).unlink()
+
+        # validation report_type
+        invoice_type = ()
+        if self.type_report == "income":
+            invoice_type = ('type', 'in', ('out_invoice', 'out_refund'))
+        else:
+            invoice_type = ('type', 'in', ('in_invoice', 'in_refund'))
+        # validation report_type
         for w in week_colums:
             end = start + timedelta(days=6)
             week = start.isocalendar()[1]
             if w == 1:
                 invoice_ids = account_invoice_obj.search(
-                    [('state', '=', 'open'), ('date_due', '>=', today), ('date_due', '<=', end), ('type', 'in', ('out_invoice', 'out_refund'))])
+                    [('state', '=', 'open'), ('date_due', '>=', today), ('date_due', '<=', end), invoice_type])
                 date_range_from_week = '%s - %s' % (datetime.now().strftime('%d/%m/%Y'),
                                                     end.strftime('%d/%m/%Y'))
             elif w == 8:
                 invoice_ids = account_invoice_obj.search(
-                    [('state', '=', 'open'), ('date_due', '>=', start), ('type', 'in', ('out_invoice', 'out_refund'))])
+                    [('state', '=', 'open'), ('date_due', '>=', start), invoice_type])
                 date_range_from_week = ' Del %s en delante ' % start.strftime(
                     '%d/%m/%Y')
             else:
                 invoice_ids = account_invoice_obj.search(
-                    [('state', '=', 'open'), ('date_due', '>=', start), ('date_due', '<=', end), ('type', 'in', ('out_invoice', 'out_refund'))])
+                    [('state', '=', 'open'), ('date_due', '>=', start), ('date_due', '<=', end), invoice_type])
                 date_range_from_week = '%s - %s' % (
                     start.strftime('%d/%m/%Y'), end.strftime('%d/%m/%Y'))
             total = 0.0
@@ -85,6 +99,7 @@ class RevenueHistoryProjection(models.TransientModel):
 
 class RevenueHistoryProjectionLine(models.TransientModel):
     _name = 'revenue.history.projection.line'
+    _description = 'Revenue history projection Lines'
 
     Projection_id = fields.Many2one(
         'revenue.history.projection', 'Projection')
