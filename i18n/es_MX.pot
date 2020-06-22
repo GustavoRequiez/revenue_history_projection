@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 12.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-04-24 20:04+0000\n"
-"PO-Revision-Date: 2020-04-24 20:04+0000\n"
+"POT-Creation-Date: 2020-06-22 14:29+0000\n"
+"PO-Revision-Date: 2020-06-22 14:29+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -51,7 +51,7 @@ msgstr "Egresos"
 #. module: revenue_history_projection
 #: model_terms:ir.ui.view,arch_db:revenue_history_projection.revenue_history_projection_view_form
 msgid "Get"
-msgstr "Obtener información"
+msgstr "Generar"
 
 #. module: revenue_history_projection
 #: model:ir.model.fields,field_description:revenue_history_projection.field_revenue_history_projection__id
@@ -96,14 +96,14 @@ msgstr "Empresa"
 #: model:ir.model.fields,field_description:revenue_history_projection.field_revenue_history_projection_line__Projection_id
 #: model_terms:ir.ui.view,arch_db:revenue_history_projection.revenue_history_projection_view_form
 msgid "Projection"
-msgstr "Proyección de Ingresos - Egresos"
+msgstr "Proyección de Ingresos y Egresos"
 
 #. module: revenue_history_projection
 #: model:ir.actions.act_window,name:revenue_history_projection.revenue_history_projection_action
 #: model:ir.ui.menu,name:revenue_history_projection.menu_revenue_history_projection
 #: model_terms:ir.ui.view,arch_db:revenue_history_projection.view_revenue_history_projection_pivot
 msgid "Projection of Income and Expenses"
-msgstr "Proyección de Ingresos - Egresos"
+msgstr "Proyección de Ingresos y Egresos"
 
 #. module: revenue_history_projection
 #: model:ir.model.fields,field_description:revenue_history_projection.field_revenue_history_projection_line__residual
@@ -113,17 +113,17 @@ msgstr "Saldo"
 #. module: revenue_history_projection
 #: model_terms:ir.ui.view,arch_db:revenue_history_projection.view_revenue_history_projection_line_tree
 msgid "Revenue History Projection"
-msgstr "Proyección de Ingresos - Egresos"
+msgstr "Proyección de Ingresos y Egresos"
 
 #. module: revenue_history_projection
 #: model:ir.model,name:revenue_history_projection.model_revenue_history_projection
 msgid "Revenue history projection"
-msgstr "Proyección de Ingresos - Egresos"
+msgstr "Proyección de Ingresos y Egresos"
 
 #. module: revenue_history_projection
 #: model:ir.model,name:revenue_history_projection.model_revenue_history_projection_line
 msgid "Revenue history projection Lines"
-msgstr "Proyección de Ingresos - Egresos"
+msgstr ""
 
 #. module: revenue_history_projection
 #: model:ir.model.fields,field_description:revenue_history_projection.field_revenue_history_projection__type_report
